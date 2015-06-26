@@ -1,0 +1,184 @@
+
+.deck{
+	font-size:1.2em;
+	position:relative;
+	padding:12px;
+}
+
+
+.card{
+	position:relative;
+	width:6em;
+	height:9em;
+	background:#F2F2F2;
+	border-radius:8px;
+	border:1px solid black;
+	font-weight:bold;
+	z-index:99;
+	}
+	
+#south .card:hover {
+	cursor:pointer;
+}
+	
+
+
+.face img{
+	position: absolute;
+	top: .45em;
+	right: .75em;
+	width: 70%;
+}
+
+.suit{
+	position:absolute;
+	top:.70em;
+	right:.22em;
+	font-size:18px;
+}
+
+.black-card{
+	color:black;
+}
+.red-card{
+	color:red;
+}
+
+.gray-card div{
+	opacity:.5;
+}
+.card .main{
+	position: relative;
+	font-size: 1.5em;
+	top: 0.28em;
+	left: .1em;
+}
+
+.top-left{
+	position:absolute;
+	top:.18em;
+	left:.18em;
+	text-align:center;
+	letter-spacing:-.15em;
+}
+.condense{
+	font-stretch:condensed;
+}
+.joker{
+	font-family:tahoma;
+	font-size:.8em;
+	font-weight:normal;
+	letter-spacing:-0.05em;
+	font-stretch:ultra-condensed;
+}
+
+.bottom-right{
+	position:absolute;
+	bottom:.18em;
+	right:.18em;
+	text-align:center;
+	letter-spacing:-.15em;
+	-ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+	
+}
+.top-left .sm-suit{
+	position:relative;
+	top:-.3em;
+}
+.bottom-right .sm-suit{
+	position:relative;
+	bottom:.3em;
+}
+
+.card-back{
+	visibility:hidden;
+	position:absolute;
+	margin:.18em;
+	background-image:url("../../../../img/back2.png");
+	background-size:cover;
+	width:94%;
+	height:96%;
+	border-radius:8px;
+	z-index:999;
+}
+.drag-shadow{
+-webkit-box-shadow: -5px -7px 9px 2px rgba(0,0,0,0.75);
+-moz-box-shadow: -5px -7px 9px 2px rgba(0,0,0,0.75);
+box-shadow: -5px -7px 9px 2px rgba(0,0,0,0.75);
+}
+
+.spotA1 { position: absolute; left: 0.60em; top: 0.5em; }
+.spotA2 { position: absolute; left: 0.60em; top: 1.5em; }
+.spotA3 { position: absolute; left: 0.60em; top: 2.0em; }
+.spotA4 { position: absolute; left: 0.60em; top: 2.5em; }
+.spotA5 { position: absolute; left: 0.60em; top: 3.5em; }
+.spotB1 { position: absolute; left: 1.55em; top: 0.5em; }
+.spotB2 { position: absolute; left: 1.55em; top: 1.0em; }
+.spotB3 { position: absolute; left: 1.55em; top: 2.0em; }
+.spotB4 { position: absolute; left: 1.55em; top: 3.0em; }
+.spotB5 { position: absolute; left: 1.55em; top: 3.5em; }
+.spotC1 { position: absolute; left: 2.50em; top: 0.5em; }
+.spotC2 { position: absolute; left: 2.50em; top: 1.5em; }
+.spotC3 { position: absolute; left: 2.50em; top: 2.0em; }
+.spotC4 { position: absolute; left: 2.50em; top: 2.5em; }
+.spotC5 { position: absolute; left: 2.50em; top: 3.5em; }
+
+.ace {font-size: 300%; position: absolute; left: 0.325em; top:  0.250em;}
+
+
+.ha:after{}
+.h2:after{}
+.h3:after{}
+.h4:after{}
+.h5:after{}
+.h6:after{}
+.h7:after{}
+.h8:after{}
+.h9:after{}
+.h10:after{}
+.hj:after{}
+.hq:after{}
+.hk:after{}
+.sa:after{}
+.s2:after{}
+.s3:after{}
+.s4:after{}
+.s5:after{}
+.s6:after{}
+.s7:after{}
+.s8:after{}
+.s9:after{}
+.s10:after{}
+.sj:after{}
+.sq:after{}
+.sk:after{}
+.ca:after{}
+.c2:after{}
+.c3:after{}
+.c4:after{}
+.c5:after{}
+.c6:after{}
+.c7:after{}
+.c8:after{}
+.c9:after{}
+.c10:after{}
+.cj:after{}
+.cq:after{}
+.ck:after{}
+.da:after{}
+.d2:after{}
+.d3:after{}
+.d4:after{}
+.d5:after{}
+.d6:after{}
+.d7:after{}
+.d8:after{}
+.d9:after{}
+.d10:after{}
+.dj:after{}
+.dq:after{}
+.dk:after{}
+.jk1:after{}
+.jk2:after{}

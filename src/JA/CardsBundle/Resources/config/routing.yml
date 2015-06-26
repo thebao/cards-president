@@ -1,0 +1,3 @@
+ja_cards_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: JACardsBundle:Default:index }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/jquery-ui/jquery-ui.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/ui.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/trouduc.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/cards.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/positions.css') }}" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/knuth.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
+
+</head>
+<body>
+<div class="deck hide" id="thedeck">
+</div>
+<div id="right-bar" class="main-floats">
+    <div id="opponents">
+        <div id="north" class="deck subdeck"></div>
+        <div id="east" class="deck subdeck"></div>
+        <div id="west" class="deck subdeck"></div>
+    </div>
+    <div id="chat">
+        <div class="sub-hdr">CHAT</div>
+        <div class="cont">
+            <ul></ul>
+        </div>
+        <div id="input">
+            <form id="chat-form">
+                <input id="chat-text" type="text"/>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="play-area" class="main-floats">
+    <div id="revolution" class="hide">
+        <div class="rev-title">REVOLUTION?</div>
+        <div class="status">Le mode révolution est <div class="status-off">inactif !</div></div>
+        <div class="ask">Souhaitez-vous l'activer ?</div>
+        <br/><br/>
+        <div class="btn-group" role="group" aria-label="...">
+            <div type="button" class="close-rev btn btn-lg btn-success">Oui</div>
+            <div type="button" class="close-rev btn btn-lg btn-danger">Non</div>
+        </div>
+        <br/><br/>
+    </div>
+    <div id="play-zone">
+        <div id="flop"></div>
+        <div id="play-button" class="hide btn btn-success btn-lg">PLAY !</div>
+    </div>
+    <div id="south" class="deck">
+    </div>
+    <div id="toolbar">
+        <div id="toggle-toolbar">=</div>
+        <div id="decker" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> new deck</div>
+        <div id="clearer" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> clear deck</div>
+        <div id="stacker" class="btn btn-info stack-open"><i class="glyphicon glyphicon-resize-small"></i> <span>stack</span></div>
+        <div id="flipper" class="btn btn-info hide"><i class="glyphicon glyphicon-refresh"></i> flip cards</div>
+        <div id="sorter" class="btn btn-info"><i class="glyphicon glyphicon-sort-by-attributes"></i> sort cards</div>
+        <div id="slide-wrap"><small><b>Resize cards</b></small><br/><div id="resizer"></div></div>
+    </div>
+</div>
+<script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/play.js') }}"></script>
+<script type="text/javascript">newdeck();</script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+.main-floats{
+	float:left;
+}
+
+#play-area{
+	width:calc(100% - 300px);
+	position:relative;
+	height:100%;
+}
+
+#play-zone{
+	position:relative;
+	text-align:center;
+	min-height:300px;
+	height:50%;
+	top:48px;
+	
+}
+
+#flop{
+	width: 24em;
+	position: relative;
+	left: 50%;
+	top: 30%;
+	margin-left: -4em;
+}
+
+
+#flop .card{
+	float:left;
+	font-size:1.6em;
+}
+
+
+#play-button{
+	position:relative;
+	margin:10% auto 0 auto;
+	display:inline-block;
+	z-index:9999;
+}
+
+#right-bar{
+	height:100%;
+	position:fixed;
+	right:0;
+	top:0;
+	min-width:300px;
+	background:rgba(0,0,0,.2);
+}
+
+#chat{
+	position:absolute;
+	bottom:0;
+	right:0;
+	left:0;
+	height:50%;
+	background:rgba(0,0,0,.5);
+	color:white;
+}
+#chat .sub-hdr{
+	background:rgba(0,0,0,.2);
+	font-weight:bold;
+	padding:4px;
+	height:34px;
+}
+
+#revolution{
+	position:fixed;
+	left:50%;
+	margin-left:-7em;
+	top:20%;
+	z-index:999;
+	font-size:2em;
+	background:red;
+	padding-top:.35em;
+	width:14em;
+	text-align:center;
+	display:table-cell;
+	vertical-align:middle;
+	border:.5em solid gray;
+	color:white;
+}
+#revolution .rev-title{font-size:2em;
+	font-stretch:extra-condensed;
+	font-family:impact;}
+
+#chat .cont {
+	padding:8px;
+    position: absolute;
+	
+	top:34px;
+	bottom:20px;
+	left:0;
+	right:0;
+	overflow-y:scroll;
+	height:auto;
+}
+
+
+#chat ul {list-style:none;}
+#chat ul li:before{content:"-"; position:relative; left:-5px;}
+#chat ul li{ text-indent:-5px; }
+
+#chat .move-text{color:#666;}
+#chat #input{
+	height:24px;
+	position:absolute;
+	bottom:0;
+	width:100%;
+}
+
+#chat input{
+	background:rgba(48,48,48,1);
+	color:white;
+	width:100%;
+}
+#toolbar{
+	background:rgba(128,128,128,.8);
+	position:absolute;
+	padding:24px;
+	bottom:0;
+	left:50%;
+	width:800px;
+	border-radius:8px 8px 0 0;
+	margin-left:-400px;
+	
+	-webkit-box-shadow: 0px 1px 20px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 20px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 20px -1px rgba(0,0,0,0.75);
+	border:1px solid #333;
+}
+
+#toggle-toolbar{
+	position: absolute;
+	top: -27px;
+	padding-bottom: 0px;
+	border:1px solid #333;
+	height: 27px;
+	width: 50px;
+	font-size: 24px;
+	background: rgba(128,128,128,.8);
+	border-radius: 20px 20px 0px 0px;
+	left: 375px;
+	text-align: center;
+	vertical-align: top;
+}
+
+#toggle-toolbar:hover{
+cursor:pointer;
+}
+
+#toolbar div.btn{
+	float:left;
+	margin-left:12px;
+	}
+
+#slide-wrap{
+	float:left;
+	position:relative;
+	top:-8px;
+	margin-left:12px;
+	width:80px;
+	color:white;
+}
+
+#resizer{
+	position:relative;
+	top:4px;
+}

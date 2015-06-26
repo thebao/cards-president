@@ -1,0 +1,30 @@
+
+.subdeck{
+	font-size:.6em;
+	border:.5em dashed white;
+	width:28em;
+	left:50%;
+	margin-left:-14em;
+	height:10.5em;
+	padding:0 0 0 6em;
+	margin-top:.4em;
+}
+
+.subdeck .card{
+	margin-left:-5em;
+}
+
+.subdeck  .card .main, .subdeck  .card  .top-left, .subdeck  .card  .bottom-right{
+	display:none;
+}
+
+#south{
+	position:absolute;
+	bottom:120px;
+	width:45em;
+	left:50%;
+	margin-left:-22.5em;
+	padding:.5em;
+	height:11em;
+	border:6px dashed white;
+}
