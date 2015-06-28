@@ -3,6 +3,7 @@ deck = $("#south");
 stacked = true;
 flippedback=false;
 toolbarviz=true;
+gameId="";
 
 function stack(deck){
 	$("#"+deck+" .card").animate({marginLeft: "-="+stacksize});
@@ -85,13 +86,21 @@ $("#stacker").click(function(){
 		unstack("south");
 	}
 });
-
+$
 $("#clearer").click(function(){cleardeck(deck)});
 $("#decker").click(function(){
-	unstack("south");
-	cleardeck(deck);
-	newdeck();
-	});
+    cleardeck(deck);
+    $.getJSON( configuration.dealerUrl, function( data ) {
+        $.each( data.cards, function( key, val ) {
+            $("#south").append(val.markup);
+        });
+
+        gameId=data.gameId;
+    }).done(function() {
+        activateSelectable();
+    });
+
+});
 $("#flipper").click(function(){flipcards("#south")});
 $("#toggle-toolbar").click(function(){toggletoolbar()});
 $("#sorter").click(function(){sortcards()});

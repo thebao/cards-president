@@ -13,8 +13,11 @@ body,html{
 .deck .card{
 	
 	float:left;
+    margin-left: -3.5em;
 }
-
+#south.deck{
+    padding-left: 5em;
+}
 .hide{
 	display:none;
 }

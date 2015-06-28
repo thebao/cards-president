@@ -18,7 +18,8 @@
 
 </head>
 <body>
-<div class="deck hide" id="thedeck">
+<div class="deck" id="thedeck">
+
 </div>
 <div id="right-bar" class="main-floats">
     <div id="opponents">
@@ -55,6 +56,9 @@
         <div id="play-button" class="hide btn btn-success btn-lg">PLAY !</div>
     </div>
     <div id="south" class="deck">
+
+        {% block body %}
+        {% endblock  %}
     </div>
     <div id="toolbar">
         <div id="toggle-toolbar">=</div>
@@ -66,9 +70,15 @@
         <div id="slide-wrap"><small><b>Resize cards</b></small><br/><div id="resizer"></div></div>
     </div>
 </div>
+<script type="text/javascript">
+    var configuration = {
+        dealerUrl: "{{ path("ja_cards_getcards") }}",
+        cardCheckUrl: "{{ path("ja_cards_checkcards") }}"
+    }
+</script>
 <script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/play.js') }}"></script>
-<script type="text/javascript">newdeck();</script>
+<script type="text/javascript">//newdeck();</script>
 </body>
 </html>
