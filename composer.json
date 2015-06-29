@@ -22,7 +22,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "dev-master",
         "leaseweb/memcache-bundle": "*",
-        "cboden/ratchet": "*"
+        "nc/faye-client": "~1.0",
+        "guzzle/guzzle": "~3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

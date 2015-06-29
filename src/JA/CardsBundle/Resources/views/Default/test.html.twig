@@ -1,0 +1,6 @@
+{% extends('::base.html.twig') %}
+{% block body %}
+{% for card in cards %}
+    {{ card.markup|raw }}
+{% endfor %}
+{% endblock %}

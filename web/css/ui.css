@@ -98,7 +98,7 @@
 
 
 #chat ul {list-style:none;}
-#chat ul li:before{content:"-"; position:relative; left:-5px;}
+#chat ul li.chat:before{content:"-"; position:relative; left:-5px;}
 #chat ul li{ text-indent:-5px; }
 
 #chat .move-text{color:#666;}
@@ -113,6 +113,9 @@
 	background:rgba(48,48,48,1);
 	color:white;
 	width:100%;
+}
+#chat .notif{
+    color:#090;
 }
 #toolbar{
 	background:rgba(128,128,128,.8);

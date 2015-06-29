@@ -1,10 +1,24 @@
-joueur="Th&eacute;o";
+joueur=prompt("Nom du joueur:");
 $(document).ready(function(){
+    var client = new Faye.Client('http://localhost:3000/');
+
+    client.subscribe('/chat', function (message) {
+        if(message.type=="chat")
+            $("#chat .cont ul").append("<li class='chat-text "+message.type+"'>"+message.author+": "+message.text+"</li>");
+        else
+            $("#chat .cont ul").append("<li class='chat-text "+message.type+"'>"+message.text+"</li>");
+
+    });
 	$("#chat-form").submit(function(event){
 		event.preventDefault();
-		text=joueur+": "+$("#chat-text").val();
-		$("#chat .cont ul").append("<li class='chat-text'>"+text+"</li>");
-		$("#chat-text").val("");
+		msg=$("#chat-text").val();
+        var publication = client.publish('/chat', {author: joueur, type:"chat", text:msg});
+
+        publication.then(function() {
+            $("#chat-text").val("");
+        }, function(error) {
+            console.log(error);
+        });
 		return false;
 	});
 });

@@ -1,4 +1,14 @@
+parameters:
+    NomDuBundle.faye.endpoint: 'http://localhost:3000/'
+    NomDuBundle.faye.adapter.class: 'Nc\FayeClient\Adapter\CurlAdapter'
+    NomDuBundle.faye.client.class: 'Nc\FayeClient\Client'
+ 
 services:
-#    ja_cards.example:
-#        class: JA\CardsBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+    NomDuBundle.faye.adapter:
+        class: %NomDuBundle.faye.adapter.class%
+ 
+    NomDuBundle.faye.client:
+        class: %NomDuBundle.faye.client.class%
+        arguments:
+            - @NomDuBundle.faye.adapter
+            - %NomDuBundle.faye.endpoint%
