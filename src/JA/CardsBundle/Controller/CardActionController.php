@@ -9,6 +9,7 @@
 namespace JA\CardsBundle\Controller;
 
 use JA\CardsBundle\Entity\Card;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Storage\Handler;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -112,6 +113,7 @@ class CardActionController extends Controller {
         $error="";
         $message="";
         if($this->playerDoesNotHaveCards($request)){
+
             $status="error";
             $error="C'est pas beau de tricher...\n >:(";
         }
@@ -143,8 +145,12 @@ class CardActionController extends Controller {
         $game = $cache->get($gameId);
         $game["round"]+=1;
         $cache->set($gameId, $game, $timeToLive);
+        /* @var User $user */
+        $user = $this->getUser();
+        $channelName = $user->getCurrentGame();
 
-
+        $faye = $this->container->get('NomDuBundle.faye.client');
+        $faye->send("/".$channelName, "bao");
 
     }
 
@@ -165,6 +171,12 @@ class CardActionController extends Controller {
 
         return false;
 
+    }
+
+    public function pingAction()
+    {
+        $date = date_create();
+        return new JsonResponse(array("pong"=>date_format($date, 'U')));
     }
 
 }

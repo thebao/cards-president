@@ -21,7 +21,7 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/user-bundle": "dev-master",
-        "leaseweb/memcache-bundle": "*",
+        "leaseweb/memcache-bundle": "1.2.18",
         "nc/faye-client": "~1.0",
         "guzzle/guzzle": "~3.0"
     },

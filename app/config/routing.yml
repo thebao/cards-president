@@ -4,7 +4,7 @@ ja_user:
 
 ja_cards:
     resource: "@JACardsBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /game
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

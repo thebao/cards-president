@@ -24,6 +24,12 @@ class User extends BaseUser
 
 
     /**
+     * @var string
+     * @ORM\Column(name="currentGame", type="string", length=255)
+     */
+    private $currentGame;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -35,5 +41,28 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+    }
+
+    /**
+     * Set currentGame
+     *
+     * @param string $currentGame
+     * @return User
+     */
+    public function setCurrentGame($currentGame)
+    {
+        $this->currentGame = $currentGame;
+
+        return $this;
+    }
+
+    /**
+     * Get currentGame
+     *
+     * @return string 
+     */
+    public function getCurrentGame()
+    {
+        return $this->currentGame;
     }
 }

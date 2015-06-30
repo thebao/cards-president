@@ -1,6 +1,10 @@
-ja_cards_homepage:
-    path:     /
-    defaults: { _controller: JACardsBundle:Default:index, name: JAde }
+ja_cards_game:
+    path:     /play
+    defaults: { _controller: JACardsBundle:Default:joinGame }
+
+ja_cards_lobby:
+    path:     /lobby
+    defaults: { _controller: JACardsBundle:Default:lobby }
 
 ja_cards_getcards:
     path:     /json/get_cards
@@ -9,3 +13,6 @@ ja_cards_getcards:
 ja_cards_checkcards:
     path:     /api/check_cards
     defaults: { _controller: JACardsBundle:CardAction:checkMoveIsLegal }
+ja_cards_ping:
+    path:     /json/ping
+    defaults: { _controller: JACardsBundle:CardAction:ping }

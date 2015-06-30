@@ -1,0 +1,16 @@
+.white-bg{
+    background:white;
+}
+
+.m-top{
+    margin-top:24px;
+}
+
+#game-list {
+    background:white;
+    color:#333333;
+}
+
+#game-list tr.game-row:hover{
+    cursor: pointer;
+}

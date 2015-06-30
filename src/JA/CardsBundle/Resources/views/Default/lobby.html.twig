@@ -1,0 +1,67 @@
+{% extends('::base.html.twig') %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/lobby.js') }}"></script>
+{% endblock %}
+
+{% block play_area %}
+<div id="launchModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Joining Game...</h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center">Joining game <span id="gameLaunchName"></span></p>
+                <p class="text-center"><b>connection in <span id="countDown">3</span></b></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container m-top">
+    <div class="col-md-8 white-bg">
+        <h2>Join a game</h2>
+        <div class="">
+            <table id="game-list" class="table table-hover">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Players</th>
+                    <th>Protected</th>
+                    <th>Country</th>
+                    <th>Ping</th>
+                </tr>
+                <tr class="game-row" data-game="1234">
+                    <td>1</td>
+                    <td class="title"><b>partie de dulos</b></td>
+                    <td><span class="player-count">1</span>/<span class="player-pot">4</span></td>
+                    <td>no</td>
+                    <td>fr</td>
+                    <td>67ms</td>
+                </tr>
+                <tr class="game-row" data-game="789">
+                    <td>2</td>
+                    <td class="title"><b>partie de noodeulz</b></td>
+                    <td><span class="player-count">3</span>/<span class="player-pot">4</span></td>
+                    <td>no</td>
+                    <td>fr</td>
+                    <td>82ms</td>
+                </tr>
+                <tr class="game-row" data-game="456">
+                    <td>3</td>
+                    <td class="title"><b>partie de didz</b></td>
+                    <td><span class="player-count">1</span>/<span class="player-pot">4</span></td>
+                    <td>yes</td>
+                    <td>en</td>
+                    <td>75ms</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

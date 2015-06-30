@@ -2,86 +2,91 @@
 <html>
 <head>
     <meta charset="utf-8" />
-
+    <title>Game</title>
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/jquery-ui/jquery-ui.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/trouduc.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/cards.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/positions.css') }}" />
-
+    <link rel="stylesheet" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/main-ui.css') }}" />
+{% block javascripts %}
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/knuth.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/faye.js') }}"></script>
     <script type="text/javascript" src="http://localhost:3000/client.js"></script>
+    <script type="text/javascript" src="{{ asset('js/smilies.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/chat.js') }}"></script>
-
+{% endblock %}
 </head>
 <body>
-<div class="deck" id="thedeck">
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <h1>
+                <a class="navbar-brand" href="#">Trouduc</a>
+            </h1>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li role="presentation">
 
-</div>
-<div id="right-bar" class="main-floats">
-    <div id="opponents">
-        <div id="north" class="deck subdeck"></div>
-        <div id="east" class="deck subdeck"></div>
-        <div id="west" class="deck subdeck"></div>
-    </div>
-    <div id="chat">
-        <div class="sub-hdr">CHAT</div>
-        <div class="cont">
-            <ul></ul>
-        </div>
-        <div id="input">
-            <form id="chat-form">
-                <input id="chat-text" type="text"/>
-            </form>
-        </div>
-    </div>
-</div>
-<div id="play-area" class="main-floats">
-    <div id="revolution" class="hide">
-        <div class="rev-title">REVOLUTION?</div>
-        <div class="status">Le mode révolution est <div class="status-off">inactif !</div></div>
-        <div class="ask">Souhaitez-vous l'activer ?</div>
-        <br/><br/>
-        <div class="btn-group" role="group" aria-label="...">
-            <div type="button" class="close-rev btn btn-lg btn-success">Oui</div>
-            <div type="button" class="close-rev btn btn-lg btn-danger">Non</div>
-        </div>
-        <br/><br/>
-    </div>
-    <div id="play-zone">
-        <div id="flop"></div>
-        <div id="play-button" class="hide btn btn-success btn-lg">PLAY !</div>
-    </div>
-    <div id="south" class="deck">
+                </li>
+                <li role="presentation" class="active"><a href="#">Home</a></li>
+                <li role="presentation"><a href="#">Add</a></li>
+                <li role="presentation"><a href="#">Profile</a></li>
 
-        {% block body %}
-        {% endblock  %}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                {% block user_bar %}
+                {%if app.user %}
+                    <li><a class="escape-nav-style" href="{{ path('fos_user_profile_edit') }}">{{ app.user.username }}</a>
+                {% endif %}
+                    {#
+                    {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
+                    {% set frParams = params|merge({'_locale': 'fr'}) %}
+                    {% set enParams = params|merge({'_locale': 'en'}) %}
+                    <li>&nbsp;<a class="escape-nav-style" {%if app.request.locale == "fr"%} class="active-lang" {% endif %} href="{{ path(app.request.attributes.get('_route'), frParams) }}"><img src="{{ asset('img/flags/fr.png') }}" /></a></li>
+                    <li>&nbsp;<a class="escape-nav-style" {%if app.request.locale == "en"%} class="active-lang" {% endif %} href="{{ path(app.request.attributes.get('_route'), enParams) }}"><img src="{{ asset('img/flags/gb.png') }}" /></a></li>
+                    #}
+                {% endblock %}
+            </ul>
+        </div>
     </div>
-    <div id="toolbar">
-        <div id="toggle-toolbar">=</div>
-        <div id="decker" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> new deck</div>
-        <div id="clearer" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i> clear deck</div>
-        <div id="stacker" class="btn btn-info stack-open"><i class="glyphicon glyphicon-resize-small"></i> <span>stack</span></div>
-        <div id="flipper" class="btn btn-info hide"><i class="glyphicon glyphicon-refresh"></i> flip cards</div>
-        <div id="sorter" class="btn btn-info"><i class="glyphicon glyphicon-sort-by-attributes"></i> sort cards</div>
-        <div id="slide-wrap"><small><b>Resize cards</b></small><br/><div id="resizer"></div></div>
-    </div>
-</div>
+
+</nav>
+
+
+{% block play_area %}
+{% endblock %}
 <script type="text/javascript">
     var configuration = {
+
+        {% block configuration %}
         dealerUrl: "{{ path("ja_cards_getcards") }}",
-        cardCheckUrl: "{{ path("ja_cards_checkcards") }}"
+        cardCheckUrl: "{{ path("ja_cards_checkcards") }}",
+        userName: "{{ app.user.username }}",
+        smileyDir: " {{ asset('img/smileys/') }}",
+        scrollPause: false,
+        pingUrl: "{{ path('ja_cards_ping') }}",
+        userCred: "{{ user }}"
+
+        {% endblock %}
     }
 </script>
 <script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/play.js') }}"></script>
 <script type="text/javascript">//newdeck();</script>
+<script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
 </body>
 </html>

@@ -108,7 +108,6 @@ function execmove(play){
 
 
 	last_play=play.slice(0);
-	appendscore(play);
 	cardsselected=0;
 			
 }
