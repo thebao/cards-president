@@ -1,5 +1,5 @@
 ja_cards_game:
-    path:     /play
+    path:     /play/{id}
     defaults: { _controller: JACardsBundle:Default:joinGame }
 
 ja_cards_lobby:
@@ -7,7 +7,7 @@ ja_cards_lobby:
     defaults: { _controller: JACardsBundle:Default:lobby }
 
 ja_cards_getcards:
-    path:     /json/get_cards
+    path:     /json/get_cards/{id}
     defaults: { _controller: JACardsBundle:CardAction:getCards }
 
 ja_cards_checkcards:

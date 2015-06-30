@@ -22,12 +22,12 @@ class User extends BaseUser
      */
     protected $id;
 
-
     /**
      * @var string
-     * @ORM\Column(name="currentGame", type="string", length=255)
+     *
+     * @ORM\Column(name="gameHandle", type="string", length=255, nullable=true, unique=true)
      */
-    private $currentGame;
+    protected $gameHandle;
 
     /**
      * Get id
@@ -43,26 +43,28 @@ class User extends BaseUser
         parent::__construct();
     }
 
+
+
     /**
-     * Set currentGame
+     * Set gameHandle
      *
-     * @param string $currentGame
+     * @param string $gameHandle
      * @return User
      */
-    public function setCurrentGame($currentGame)
+    public function setGameHandle($gameHandle)
     {
-        $this->currentGame = $currentGame;
+        $this->gameHandle = $gameHandle;
 
         return $this;
     }
 
     /**
-     * Get currentGame
+     * Get gameHandle
      *
      * @return string 
      */
-    public function getCurrentGame()
+    public function getGameHandle()
     {
-        return $this->currentGame;
+        return $this->gameHandle;
     }
 }

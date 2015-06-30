@@ -95,12 +95,25 @@ $("#decker").click(function(){
             $("#south").append(val.markup);
         });
 
+        populateDecks(data);
+
         gameId=data.gameId;
     }).done(function() {
         activateSelectable();
     });
 
 });
+
+var smallCard = "<div class='card' ><div class='card-back card-back-show'></div></div>"
+
+function populateDecks(data){
+    $.each( data.opponents, function(key,val){
+        for(i=0;i<val;i++){
+            $("#"+key).append(smallCard);
+        }
+    })
+
+}
 $("#flipper").click(function(){flipcards("#south")});
 $("#toggle-toolbar").click(function(){toggletoolbar()});
 $("#sorter").click(function(){sortcards()});

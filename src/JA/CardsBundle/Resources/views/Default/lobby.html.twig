@@ -60,6 +60,16 @@
                     <td>en</td>
                     <td>75ms</td>
                 </tr>
+                {% for game in games %}
+                    <tr class="game-row" data-game="456">
+                        <td>{{ game.id }}</td>
+                        <td class="title"><b>partie de {{ game.player1 }}</b></td>
+                        <td><span class="player-count">{{ game.players|length }}</span>/<span class="player-pot">4</span></td>
+                        <td>yes</td>
+                        <td>en</td>
+                        <td><a href="{{ path('ja_cards_game', {'id':game.id}) }}">go</a></td>
+                    </tr>
+                {% endfor %}
             </table>
         </div>
     </div>

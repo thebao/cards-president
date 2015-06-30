@@ -6,7 +6,7 @@
 	left:50%;
 	margin-left:-14em;
 	height:10.5em;
-	padding:0 0 0 6em;
+	padding:.2em 0 0 6em;
 	margin-top:.4em;
 }
 
@@ -19,12 +19,13 @@
 }
 
 #south{
-	position:absolute;
-	bottom:24px;
-	width:45em;
-	left:50%;
-	margin-left:-22.5em;
-	padding:.5em;
-	height:11em;
-	border:6px dashed white;
+    position: relative;
+    bottom: 4em;
+    width: 45em;
+    left: 50%;
+    margin-left: -22.5em;
+    padding: 0.5em;
+    height: 11em;
+    border: 6px dashed #FFF;
+    margin-top: 4em;
 }

@@ -19,48 +19,51 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class CardActionController extends Controller {
 
     public function generateDeck(){
+        $packs=1;
         $deck=array();
-        for($i=0;$i<4;$i++){
-            for($j=1;$j<14;$j++){
-                $card = new Card();
-                $card->setFace($j);
-                $card->setSuit($i);
-                $card->setUniqueId(hash('md5',uniqid('', true)));
-                array_push($deck, $card);
+        for($n=0;$n<$packs;$n++){
+            for($i=0;$i<4;$i++){
+                for($j=1;$j<14;$j++){
+                    $card = new Card();
+                    $card->setFace($j);
+                    $card->setSuit($i);
+                    $card->setUniqueId(hash('md5',uniqid('', true)));
+                    array_push($deck, $card);
+                }
             }
+
+            $joker1 = new Card();
+            $joker2 = new Card();
+            $joker1->setSuit("jk1")->setFace("jk1")->setUniqueId(hash('md5',uniqid('', true)));
+            $joker2->setSuit("jk2")->setFace("jk2")->setUniqueId(hash('md5',uniqid('', true)));
+            array_push($deck, $joker1);
+            array_push($deck, $joker2);
+            shuffle($deck);
         }
         return $deck;
     }
 
-    public function getCardsAction()
+    public function getCardsAction($id)
     {
+        $em = $this->getDoctrine()->getManager();
+        $game = $em->getRepository('JACardsBundle:Game')->findByUniqueId($id);
+        $players=4;
 
         $gameId = hash('md5',uniqid('', true));
         $channelName = "/chat";
-        $welcomeMessage =
-            "Nouvelle partie lancée ".
-            " à ".
-            date("H:i:s");
+        $welcomeMessage = "Nouvelle partie lancée à ".date("H:i:s");
 
         $datas = array(
             "text"=>$welcomeMessage,
             "type"=>"notif"
         );
+
         $faye = $this->container->get('NomDuBundle.faye.client');
         $faye->send($channelName, $datas);
 
         $timeToLive = 60*60*24;
 
-        $players=4;
         $deck = $this->generateDeck();
-
-        $joker1 = new Card();
-        $joker2 = new Card();
-        $joker1->setSuit("jk1")->setFace("jk1")->setUniqueId(hash('md5',uniqid('', true)));
-        $joker2->setSuit("jk2")->setFace("jk2")->setUniqueId(hash('md5',uniqid('', true)));
-        array_push($deck, $joker1);
-        array_push($deck, $joker2);
-        shuffle($deck);
 
         $array = array();
         foreach($deck as $card){
@@ -100,6 +103,11 @@ class CardActionController extends Controller {
         $game = array(
             "gameId"=>$gameId,
             "cards"=>$myCards,
+            "opponents"=>array(
+                "east"=>sizeof($eCards),
+                "west"=>sizeof($wCards),
+                "north"=>sizeof($nCards)
+            )
         );
         return new JsonResponse($game);
     }
@@ -117,6 +125,8 @@ class CardActionController extends Controller {
             $status="error";
             $error="C'est pas beau de tricher...\n >:(";
         }
+
+
 
         $postedGameId = $request->request->get('gameid');
         $game = $cache->get($postedGameId);
@@ -147,10 +157,12 @@ class CardActionController extends Controller {
         $cache->set($gameId, $game, $timeToLive);
         /* @var User $user */
         $user = $this->getUser();
-        $channelName = $user->getCurrentGame();
+
+        $channelName = $user->getGameHandle();
+
 
         $faye = $this->container->get('NomDuBundle.faye.client');
-        $faye->send("/".$channelName, "bao");
+        $faye->send("/".$channelName, "move played");
 
     }
 

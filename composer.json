@@ -23,7 +23,12 @@
         "friendsofsymfony/user-bundle": "dev-master",
         "leaseweb/memcache-bundle": "1.2.18",
         "nc/faye-client": "~1.0",
-        "guzzle/guzzle": "~3.0"
+        "guzzle/guzzle": "~3.0",
+        "doctrine/data-fixtures": "*",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "hautelook/alice-bundle": "0.1.*",
+        "bmatzner/fontawesome-bundle": "~4.3"
+
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

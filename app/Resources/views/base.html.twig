@@ -72,16 +72,21 @@
     var configuration = {
 
         {% block configuration %}
-        dealerUrl: "{{ path("ja_cards_getcards") }}",
         cardCheckUrl: "{{ path("ja_cards_checkcards") }}",
         userName: "{{ app.user.username }}",
         smileyDir: " {{ asset('img/smileys/') }}",
         scrollPause: false,
-        pingUrl: "{{ path('ja_cards_ping') }}",
-        userCred: "{{ user }}"
+        {% if user is defined %}
+            userCred: "{{ user }}",
+        {% endif %}
+        {% if game is defined %}
+            dealerUrl: "{{ path("ja_cards_getcards",{'id': game.uniqueId}) }}",
+        {% endif %}
+        pingUrl: "{{ path('ja_cards_ping') }}"
 
         {% endblock %}
     }
+
 </script>
 <script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>

@@ -33,7 +33,7 @@
 
 
 #play-button{
-	position:relative;
+	position:absolute;
 	margin:10% auto 0 auto;
 	display:inline-block;
 	z-index:9999;

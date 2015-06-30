@@ -3,6 +3,7 @@
 namespace JA\CardsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JA\UserBundle\JAUserBundle;
 
 /**
  * Game
@@ -29,30 +30,30 @@ class Game
     private $uniqueId;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="player1", type="string", length=255)
+     * @var User
+     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
      */
     private $player1;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="player2", type="string", length=255)
+     * @var User
+     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
      */
     private $player2;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="player3", type="string", length=255)
+     * @var User
+     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
      */
     private $player3;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="player4", type="string", length=255)
+     * @var User
+     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
      */
     private $player4;
 
@@ -66,7 +67,7 @@ class Game
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="ended", type="datetime")
+     * @ORM\Column(name="ended", type="datetime", nullable=true)
      */
     private $ended;
 
@@ -246,5 +247,15 @@ class Game
     public function getEnded()
     {
         return $this->ended;
+    }
+
+    public function getPlayers()
+    {
+        return array(
+            $this->player1,
+            $this->player2,
+            $this->player3,
+            $this->player4
+        );
     }
 }

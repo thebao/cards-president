@@ -31,7 +31,7 @@ $(document).ready(function(){
     });
 
     client.subscribe('/'+configuration.userCred, function (message) {
-        alert(message);
+        console.log(message)
     });
 
     client.on('transport:down', function() {

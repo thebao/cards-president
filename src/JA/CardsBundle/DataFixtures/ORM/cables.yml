@@ -1,0 +1,30 @@
+JA\UserBundle\Entity\User:
+  User0:
+    username: admin
+    email: admin@local.com
+    enabled: 1
+    gameHandle: <domainWord()>
+    plainPassword: admin
+    roles: [ROLE_ADMIN]
+  User1:
+    username: nath
+    email: nath@nath.com
+    enabled: 1
+    gameHandle: <domainWord()>
+    plainPassword: nath
+    roles: [ROLE_USER]
+  User{2..10}:
+    username: <username()>
+    email: <email()>
+    enabled: 1
+    gameHandle: <domainWord()>
+    plainPassword: <password()>
+    roles: [ROLE_USER]
+JA\CardsBundle\Entity\Game:
+  game1:
+    uniqueId: abcdef
+    player1: @User0
+    player2: @User1
+    player3: @User2
+    player4: @User3
+    started: <dateTime($max = 'now')>
