@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddbe80ec-ea7d-4256-861e-f62fbb7ab691" name="Default" comment="Before working Game entity&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/LoadCables.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app_dev.php" afterPath="$PROJECT_DIR$/web/app_dev.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/cards.css" afterPath="$PROJECT_DIR$/web/css/cards.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/main-ui.css" afterPath="$PROJECT_DIR$/web/css/main-ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/manip.js" afterPath="$PROJECT_DIR$/web/js/manip.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/play.js" afterPath="$PROJECT_DIR$/web/js/play.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/positions.css" afterPath="$PROJECT_DIR$/web/css/positions.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/routing.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/score-chat.js" afterPath="$PROJECT_DIR$/web/js/score-chat.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/public/css/ui.css" afterPath="$PROJECT_DIR$/src/JA/CardsBundle/Resources/public/css/ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/ui.css" afterPath="$PROJECT_DIR$/web/assets/css/ui.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/ui.css" afterPath="$PROJECT_DIR$/web/css/ui.css" />
+    <list default="true" id="ddbe80ec-ea7d-4256-861e-f62fbb7ab691" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cards.iws" />
@@ -48,13 +25,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="CardActionController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="135" column="9" selection-start="3852" selection-end="3852" vertical-scroll-proportion="-55.333332" vertical-offset="828" max-vertical-offset="3492">
+              <folding>
+                <element signature="e#126#157#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="DefaultController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="37" selection-start="890" selection-end="890" vertical-scroll-proportion="-4.2222223" vertical-offset="300" max-vertical-offset="774">
+            <state line="29" column="5" selection-start="1093" selection-end="1093" vertical-scroll-proportion="-8.666667" vertical-offset="288" max-vertical-offset="774">
               <folding>
-                <element signature="e#45#76#0" expanded="true" />
+                <element signature="e#970#1009#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Card.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Card.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="174" column="17" selection-start="2987" selection-end="2987" vertical-scroll-proportion="-74.666664" vertical-offset="1116" max-vertical-offset="5886">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -62,7 +59,7 @@
       <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="7" selection-start="344" selection-end="344" vertical-scroll-proportion="20.62963" vertical-offset="917" max-vertical-offset="1350">
+            <state line="21" column="0" selection-start="364" selection-end="527" vertical-scroll-proportion="-4.9259257" vertical-offset="227" max-vertical-offset="1350">
               <folding />
             </state>
           </provider>
@@ -71,62 +68,41 @@
       <file leaf-file-name="cables.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="27" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="630">
+            <state line="22" column="11" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="630">
+              <folding>
+                <marker date="1436200654841" expanded="true" signature="525:643" placeholder="JA\CardsBundle\Entity\Game:" />
+                <marker date="1436200654841" expanded="true" signature="548:643" placeholder="game0:" />
+                <marker date="1436200654841" expanded="true" signature="590:614" placeholder="players:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="lobby.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/lobby.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="938" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="518" max-vertical-offset="1386">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CardActionController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php">
+      <file leaf-file-name="Game.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="164" column="43" selection-start="4593" selection-end="4593" vertical-scroll-proportion="-12.222222" vertical-offset="2442" max-vertical-offset="3420">
+            <state line="107" column="7" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.86600494" vertical-offset="1559" max-vertical-offset="4788">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/play.js">
+      <file leaf-file-name="lobby.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="40" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="2142">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/assets/css/ui.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="13" selection-start="356" selection-end="356" vertical-scroll-proportion="0.6442953" vertical-offset="324" max-vertical-offset="3132">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Card.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Card.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="1494" selection-end="1613" vertical-scroll-proportion="-5.3333335" vertical-offset="1224" max-vertical-offset="5886">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="score-chat.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/js/score-chat.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="27" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="482" max-vertical-offset="2772">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="positions.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/positions.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="15" selection-start="345" selection-end="345" vertical-scroll-proportion="0.0" vertical-offset="188" max-vertical-offset="666">
-              <folding />
+            <state line="58" column="29" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-4.4444447" vertical-offset="924" max-vertical-offset="1476">
+              <folding>
+                <element signature="e#12#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,17 +120,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/web/js/knuth.js" />
-        <option value="$PROJECT_DIR$/web/assets/css/cards.css" />
-        <option value="$PROJECT_DIR$/web/js/deal.js" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/test.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/trouduc.css" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Card.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Game/JAGame.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/RPC/GameService.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/RPC/AcmeService.php" />
-        <option value="$PROJECT_DIR$/vendor/cboden/ratchet/composer.json" />
         <option value="$PROJECT_DIR$/vendor/jdare/clank-bundle/JDare/ClankBundle/Server/App/Handler/RPCHandler.php" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/services.xml" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
@@ -162,48 +127,59 @@
         <option value="$PROJECT_DIR$/app/config/config_dev.yml" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/WebSocket/Application.php" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/WebSocket/ChatApplication.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/web/js/faye.js" />
         <option value="$PROJECT_DIR$/web/js/clank.js" />
         <option value="$PROJECT_DIR$/web/js/chat.js" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/Controller/ChatController.php" />
         <option value="$PROJECT_DIR$/web/js/smilies.js" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/web/js/lobby.js" />
         <option value="$PROJECT_DIR$/vendor/leaseweb/memcache-bundle/Lsw/MemcacheBundle/Cache/LoggingMemcache.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/LoadCables.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig" />
         <option value="$PROJECT_DIR$/web/css/main-ui.css" />
+        <option value="$PROJECT_DIR$/web/app_dev.php" />
+        <option value="$PROJECT_DIR$/web/css/cards.css" />
+        <option value="$PROJECT_DIR$/web/js/score-chat.js" />
+        <option value="$PROJECT_DIR$/web/css/positions.css" />
+        <option value="$PROJECT_DIR$/web/assets/css/ui.css" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/public/css/ui.css" />
+        <option value="$PROJECT_DIR$/web/css/ui.css" />
+        <option value="$PROJECT_DIR$/web/css/game-ui.css" />
+        <option value="$PROJECT_DIR$/web/js/play.js" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/routing_dev.yml" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/home.html.twig" />
+        <option value="$PROJECT_DIR$/src/JA/SiteBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/app/config/routing.yml" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Move.php" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/web/js/manip.js" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/web/app_dev.php" />
-        <option value="$PROJECT_DIR$/web/css/ui.css" />
-        <option value="$PROJECT_DIR$/web/js/manip.js" />
-        <option value="$PROJECT_DIR$/web/css/cards.css" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml" />
-        <option value="$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/JA/UserBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/web/css/trouduc.css" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Entity/GameSettings.php" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Form/GameType.php" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/add.html.twig" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Form/GameSettingsType.php" />
         <option value="$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php" />
-        <option value="$PROJECT_DIR$/web/js/score-chat.js" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php" />
-        <option value="$PROJECT_DIR$/web/css/positions.css" />
-        <option value="$PROJECT_DIR$/web/js/play.js" />
-        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/public/css/ui.css" />
-        <option value="$PROJECT_DIR$/web/assets/css/ui.css" />
+        <option value="$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig" />
+        <option value="$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="x" value="49" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1317" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -231,6 +207,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -469,70 +446,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CardsBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cards" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JA" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CardsBundle" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -675,7 +588,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -756,21 +668,29 @@
       <created>1435671670185</created>
       <updated>1435671670185</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="All fucky&#10;">
+      <created>1436200486164</created>
+      <updated>1436200486164</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fucky&#10;">
+      <created>1436200650414</created>
+      <updated>1436200650414</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="49" y="-4" width="1317" height="772" extended-state="6" />
+    <frame x="49" y="24" width="1317" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22530864" sideWeight="0.4996066" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38580248" sideWeight="0.4996066" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22530864" sideWeight="0.5003934" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25154322" sideWeight="0.5003934" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.4996066" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.4996066" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32494098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25154322" sideWeight="0.4996066" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2722266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Symfony2" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296617" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -804,64 +724,17 @@
     <MESSAGE value="Initial Chat" />
     <MESSAGE value="Chat going well" />
     <MESSAGE value="Before working Game entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Before working Game entity" />
+    <MESSAGE value="All fucky&#10;" />
+    <MESSAGE value="fucky&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fucky&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/js/manip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="1980" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/deal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="57" selection-start="2814" selection-end="2814" vertical-scroll-proportion="0.0" vertical-offset="1638" max-vertical-offset="2196" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="26" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="198">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="204" selection-end="204" vertical-scroll-proportion="0.47368422" vertical-offset="0" max-vertical-offset="304" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/cards.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="98" column="42" selection-start="1322" selection-end="1322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3402" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/positions.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/trouduc.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="76" selection-start="5" selection-end="5" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/knuth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="3" selection-start="337" selection-end="337" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/test.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="16" selection-start="50" selection-end="50" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="198" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/trouduc.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="11" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="522">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
@@ -884,11 +757,6 @@
         <state line="8" column="26" selection-start="258" selection-end="258" vertical-scroll-proportion="0.3546798" vertical-offset="0" max-vertical-offset="406" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="41" selection-start="466" selection-end="466" vertical-scroll-proportion="0.5777778" vertical-offset="0" max-vertical-offset="405" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/smilies.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="12" selection-start="122" selection-end="122" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1260" />
@@ -904,34 +772,9 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="162" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="174" selection-end="174" vertical-scroll-proportion="0.27763495" vertical-offset="0" max-vertical-offset="389">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/lobby.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="938" selection-end="939" vertical-scroll-proportion="0.44148937" vertical-offset="356" max-vertical-offset="1386">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bundles/jacards/js/score-chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="9" selection-start="293" selection-end="293" vertical-scroll-proportion="0.33241758" vertical-offset="95" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/RulesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364">
-          <folding>
-            <element signature="e#6#85#0" expanded="false" />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="364" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/img/smileys/sealed.png">
@@ -939,18 +782,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="25" selection-start="866" selection-end="866" vertical-scroll-proportion="0.7958237" vertical-offset="143" max-vertical-offset="594">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config_dev.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="29" selection-start="358" selection-end="358" vertical-scroll-proportion="-0.5452436" vertical-offset="541" max-vertical-offset="972">
-          <folding />
-        </state>
+        <state line="17" column="29" selection-start="358" selection-end="358" vertical-scroll-proportion="-0.5452436" vertical-offset="541" max-vertical-offset="972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/leaseweb/memcache-bundle/Lsw/MemcacheBundle/Cache/LoggingMemcache.php">
@@ -962,152 +796,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2238" selection-end="2238" vertical-scroll-proportion="0.0" vertical-offset="1371" max-vertical-offset="1764">
-          <folding>
-            <marker date="1435671481008" expanded="true" signature="-1:-1" placeholder="doctrine:" />
-            <marker date="1435671481008" expanded="true" signature="-1:-1" placeholder="fos_user:" />
-            <marker date="1435671481008" expanded="true" signature="-1:-1" placeholder="lsw_memcache:" />
-          </folding>
-        </state>
+        <state line="72" column="0" selection-start="2238" selection-end="2238" vertical-scroll-proportion="0.0" vertical-offset="1371" max-vertical-offset="1764" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/LoadCables.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-9.333333" vertical-offset="270" max-vertical-offset="1368">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="67" selection-start="3146" selection-end="3146" vertical-scroll-proportion="-7.814815" vertical-offset="1031" max-vertical-offset="1476">
-          <folding>
-            <element signature="e#12#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="312" selection-end="312" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="46" selection-start="4193" selection-end="4193" vertical-scroll-proportion="-32.0" vertical-offset="648" max-vertical-offset="1836">
-          <folding />
-        </state>
+        <state line="17" column="22" selection-start="316" selection-end="316" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="450" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/app_dev.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="37" selection-start="787" selection-end="787" vertical-scroll-proportion="0.28961748" vertical-offset="146" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="1103" selection-end="1103" vertical-scroll-proportion="0.047493402" vertical-offset="414" max-vertical-offset="864">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="10" selection-start="4046" selection-end="4046" vertical-scroll-proportion="-131.62962" vertical-offset="1090" max-vertical-offset="4806">
-          <folding>
-            <element signature="e#41#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/deal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="58" selection-start="1945" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="2196">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/ui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="17" selection-start="564" selection-end="564" vertical-scroll-proportion="0.0" vertical-offset="847" max-vertical-offset="3672">
-          <folding />
-        </state>
+        <state line="15" column="37" selection-start="787" selection-end="787" vertical-scroll-proportion="0.28961748" vertical-offset="146" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/main-ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="9" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
+        <state line="4" column="9" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/cards.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="24" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="3492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Card.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="1494" selection-end="1613" vertical-scroll-proportion="-5.3333335" vertical-offset="1224" max-vertical-offset="5886">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="27" selection-start="125" selection-end="125" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="7" selection-start="344" selection-end="344" vertical-scroll-proportion="20.62963" vertical-offset="917" max-vertical-offset="1350">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="37" selection-start="890" selection-end="890" vertical-scroll-proportion="-4.2222223" vertical-offset="300" max-vertical-offset="774">
-          <folding>
-            <element signature="e#45#76#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="108" column="24" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.0" vertical-offset="1574" max-vertical-offset="3492" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/js/score-chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="27" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="482" max-vertical-offset="2772">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="164" column="43" selection-start="4593" selection-end="4593" vertical-scroll-proportion="-12.222222" vertical-offset="2442" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/manip.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="106" column="72" selection-start="2370" selection-end="2370" vertical-scroll-proportion="0.0" vertical-offset="1983" max-vertical-offset="2376">
-          <folding />
-        </state>
+        <state line="33" column="27" selection-start="1206" selection-end="1206" vertical-scroll-proportion="0.0" vertical-offset="482" max-vertical-offset="2772" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/positions.css">
@@ -1117,30 +831,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/play.js">
+    <entry file="file://$PROJECT_DIR$/web/assets/css/ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="40" selection-start="721" selection-end="721" vertical-scroll-proportion="0.0" vertical-offset="414" max-vertical-offset="2142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="25" selection-start="1416" selection-end="1416" vertical-scroll-proportion="0.23224044" vertical-offset="365" max-vertical-offset="1980">
+        <state line="23" column="13" selection-start="270" selection-end="270" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="3132">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/public/css/ui.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="21" selection-start="375" selection-end="375" vertical-scroll-proportion="0.3546798" vertical-offset="486" max-vertical-offset="3150">
+        <state line="31" column="1" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="3150">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/assets/css/ui.css">
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="13" selection-start="356" selection-end="356" vertical-scroll-proportion="0.6442953" vertical-offset="324" max-vertical-offset="3132">
+        <state line="35" column="9" selection-start="1722" selection-end="1722" vertical-scroll-proportion="-10.0" vertical-offset="342" max-vertical-offset="900" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="38" selection-start="910" selection-end="910" vertical-scroll-proportion="-7.3333335" vertical-offset="270" max-vertical-offset="1404" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing_dev.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="547" selection-end="547" vertical-scroll-proportion="1.1020408" vertical-offset="0" max-vertical-offset="486" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="15" selection-start="255" selection-end="255" vertical-scroll-proportion="0.4176334" vertical-offset="0" max-vertical-offset="431" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="19" selection-start="860" selection-end="860" vertical-scroll-proportion="0.87061405" vertical-offset="89" max-vertical-offset="594" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="44" selection-start="1818" selection-end="1818" vertical-scroll-proportion="0.0" vertical-offset="1600" max-vertical-offset="2016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="22" selection-start="489" selection-end="489" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/play.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="28" selection-start="1831" selection-end="1831" vertical-scroll-proportion="0.0" vertical-offset="1116" max-vertical-offset="2142" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/manip.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="12" selection-start="2353" selection-end="2353" vertical-scroll-proportion="0.0" vertical-offset="1623" max-vertical-offset="2502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/deal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="58" selection-start="1945" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="2196" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="63" selection-start="405" selection-end="405" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="80" selection-start="2308" selection-end="2308" vertical-scroll-proportion="-10.666667" vertical-offset="486" max-vertical-offset="1854">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/trouduc.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="1" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/lobby.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="938" selection-end="939" vertical-scroll-proportion="0.0" vertical-offset="518" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Card.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="174" column="17" selection-start="2987" selection-end="2987" vertical-scroll-proportion="-74.666664" vertical-offset="1116" max-vertical-offset="5886">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/UserBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="364" selection-end="527" vertical-scroll-proportion="-4.9259257" vertical-offset="227" max-vertical-offset="1350">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/DataFixtures/ORM/cables.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="11" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="630">
+          <folding>
+            <marker date="1436200654841" expanded="true" signature="525:643" placeholder="JA\CardsBundle\Entity\Game:" />
+            <marker date="1436200654841" expanded="true" signature="548:643" placeholder="game0:" />
+            <marker date="1436200654841" expanded="true" signature="590:614" placeholder="players:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="5" selection-start="1093" selection-end="1093" vertical-scroll-proportion="-8.666667" vertical-offset="288" max-vertical-offset="774">
+          <folding>
+            <element signature="e#970#1009#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Controller/CardActionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="135" column="9" selection-start="3852" selection-end="3852" vertical-scroll-proportion="-55.333332" vertical-offset="828" max-vertical-offset="3492">
+          <folding>
+            <element signature="e#126#157#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Resources/views/Default/lobby.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="29" selection-start="2559" selection-end="2559" vertical-scroll-proportion="-4.4444447" vertical-offset="924" max-vertical-offset="1476">
+          <folding>
+            <element signature="e#12#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JA/CardsBundle/Entity/Game.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="7" selection-start="1714" selection-end="1714" vertical-scroll-proportion="0.86600494" vertical-offset="1541" max-vertical-offset="4770">
           <folding />
         </state>
       </provider>
