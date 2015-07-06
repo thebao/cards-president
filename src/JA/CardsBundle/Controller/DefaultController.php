@@ -15,6 +15,7 @@ class DefaultController extends Controller
         $repo = $this->getDoctrine()->getManager()->getRepository('JACardsBundle:Game');
         $game = $repo->find($id);
         if (null === $game){
+            bao
             throw new NotFoundHttpException("La partie d'id ".$id." n'existe pas.");
         }
         $usr= $this->get('security.context')->getToken()->getUser();
