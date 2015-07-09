@@ -1,5 +1,10 @@
 {% extends('::base.html.twig') %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}"/>
+{% endblock %}
+
 {% block play_area %}
 <div id="play-area" class="col-md-9">
     <div id="toolbar">

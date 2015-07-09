@@ -27,7 +27,8 @@
         "doctrine/data-fixtures": "*",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
         "hautelook/alice-bundle": "0.1.*",
-        "bmatzner/fontawesome-bundle": "~4.3"
+        "bmatzner/fontawesome-bundle": "~4.3",
+        "friendsofsymfony/jsrouting-bundle": "*"
 
     },
     "require-dev": {

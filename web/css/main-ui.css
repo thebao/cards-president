@@ -6,15 +6,43 @@
     color:white;
 }
 
+input[type="file"]:focus, input[type="checkbox"]:focus, input[type="radio"]:focus {
+    outline: none;
+    outline-offset: -2px;
+}
+
+thead tr{
+    border-bottom: 1px solid #8D8D8D;
+}
 .m-top{
     margin-top:24px;
 }
 
-#game-list {
-    background:white;
-    color:#333333;
+.dark{
+    color:#666;
 }
 
+#game-list {
+    background: rgba(92,92,92,.9);
+    color: #E0E0E0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+#game-list tr.game-row{
+    transition: background-color 0.5s ease-in-out;
+}
+#game-list tr.flash{
+    background:#41A773;
+}
 #game-list tr.game-row:hover{
     cursor: pointer;
+    background:#41A773;
+}
+.warner{
+    padding:15px;
+}
+.queue-table td:hover{
+    background: #999;
+    border-radius: 4px;
 }

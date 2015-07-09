@@ -1,0 +1,14 @@
+{% extends '::base.html.twig' %}
+{% block play_area %}
+    {% for key, message in app.session.flashbag.all() %}
+        <div class="alert alert-{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+    {% endfor %}
+
+    {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+    <div class="col-sm-2-offset well col-sm-4">
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+    </div>
+{% endblock %}

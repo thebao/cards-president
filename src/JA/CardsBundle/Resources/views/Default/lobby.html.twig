@@ -1,77 +1,101 @@
 {% extends('::base.html.twig') %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript" src="{{ asset('js/lobby.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/knockout-js/knockout.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/knockout-js/bh/bh-modal.js') }}"></script>
+
 {% endblock %}
 
 {% block play_area %}
-<div id="launchModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+<div id="launchModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"  data-bind="modal:queueing">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Joining Game...</h4>
+                <h4 class="modal-title" id="myModalLabel">En attente de joueurs...</h4>
             </div>
             <div class="modal-body">
-                <p class="text-center">Joining game <span id="gameLaunchName"></span></p>
-                <p class="text-center"><b>connection in <span id="countDown">3</span></b></p>
+                <h5 class="text-center">Partie de <span data-bind="text: queuedGame().owner"></span></h5>
+                <p><span data-bind="text: queuedGame().players().length"></span> joueurs sur <span data-bind="text: queuedGame().maxPlayers"></span></p>
+                <table class="table">
+                    <tbody data-bind="foreach: queuedGame().players">
+                        <tr >
+                            <td>
+                                <div class="btn-group" role="group">
+                                    <button class="btn btn-default btn-sm"  data-bind="text:name"></button>
+                                    <button class="btn btn-danger btn-sm" data-bind="visible: $root.queuedGame().owner == '{{ app.user }}'"><i class="fa fa-remove"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">Annuler</button>
             </div>
         </div>
     </div>
 </div>
-
-<div class="container m-top">
-    <div class="col-md-8 white-bg">
-        <h2>Join a game</h2>
-        <div class="">
-            <table id="game-list" class="table table-hover">
-                <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Players</th>
-                    <th>Protected</th>
-                    <th>Country</th>
-                    <th>Ping</th>
-                </tr>
-                <tr class="game-row" data-game="1234">
-                    <td>1</td>
-                    <td class="title"><b>partie de dulos</b></td>
-                    <td><span class="player-count">1</span>/<span class="player-pot">4</span></td>
-                    <td>no</td>
-                    <td>fr</td>
-                    <td>67ms</td>
-                </tr>
-                <tr class="game-row" data-game="789">
-                    <td>2</td>
-                    <td class="title"><b>partie de noodeulz</b></td>
-                    <td><span class="player-count">3</span>/<span class="player-pot">4</span></td>
-                    <td>no</td>
-                    <td>fr</td>
-                    <td>82ms</td>
-                </tr>
-                <tr class="game-row" data-game="456">
-                    <td>3</td>
-                    <td class="title"><b>partie de didz</b></td>
-                    <td><span class="player-count">1</span>/<span class="player-pot">4</span></td>
-                    <td>yes</td>
-                    <td>en</td>
-                    <td>75ms</td>
-                </tr>
-                {% for game in games %}
-                    <tr class="game-row" data-game="456">
-                        <td>{{ game.id }}</td>
-                        <td class="title"><b>partie de {{ game.player1 }}</b></td>
-                        <td><span class="player-count">{{ game.players|length }}</span>/<span class="player-pot">4</span></td>
-                        <td>yes</td>
-                        <td>en</td>
-                        <td><a href="{{ path('ja_cards_game', {'id':game.id}) }}">go</a></td>
+<div class="col-sm-8 col-sm-offset-2">
+    <h2 class="dark">Parties Disponibles:</h2>
+    <span id="test" class="dark hidden">flash</span>
+    <div class="container m-top">
+        <div class="col-sm-8">
+            <div class="">
+                <table id="game-list" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th class="text-center">Players</th>
+                        <th class="text-center">Protected</th>
+                        <th class="text-center">Country</th>
+                        <th class="text-center">Chat</th>
+                        <th></th>
                     </tr>
-                {% endfor %}
-            </table>
+                    </thead>
+                    <tbody data-bind="foreach: games">
+                        <tr class="game-row" data-bind="attr: {'data-game': uniqueId }" data-game="">
+                            <td data-bind="text: id"></td>
+                            <td class="title"><b>partie de <span data-bind="text: owner"></span></b></td>
+                            <td class="text-center players" style="position: relative;"{# title="{% for p in game.players %}{{ p.username }}&#10;{% endfor %}"#}><span class="player-count" data-bind="text: players().length"></span>/<span data-bind="text: maxPlayers" class="player-pot"></span></td>
+                            <td class="text-center">
+                                <i class="fa fa-lock" data-bind="visible: private"></i>
+                                <i class="fa fa-unlock" data-bind="visible: !private"></i>
+                            </td>
+                            <td class="text-center"><img src="{{ asset('img/flags/fr.png') }}" /></td>
+                            <td class="text-center">
+                                <i class="fa fa-microphone" data-bind="visible: chat"></i>
+                                <i class="fa fa-microphone-slash" data-bind="visible: !chat"></i>
+                            </td>
+                            <td>
+                                <a data-bind="visible: owner == '{{ app.user }}', attr: { href: remRoute}" href="#" class="btn btn-danger btn-xs">cancel</a>
+                                <span data-bind="visible: owner != '{{ app.user }}', click: $parent.manageGame" href="#" class="btn btn-success btn-xs">join</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+{% block js_configuration %}
+    {{ parent() }},
+    getGameUrl: "{{ path('ja_cards_getgames') }}"
+    {% if gameId is defined %}
+        ,
+        waitId: {{ gameId }},
+    {% endif %},
+    user:{
+        id: {{ app.user.id }},
+        name: "{{ app.user.username }}"
+    }
+
+
+{% endblock %}
+{% block bottom_scripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/ko-lobby.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/lobby.js') }}"></script>
 {% endblock %}

@@ -1,6 +1,11 @@
 body{
-	background-image:url("../../../../img/felt.png");
+	background:url("../../../../img/bg.jpg") no-repeat center center fixed;
 	font-family:arial;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }
 body,html{
 	width:100%;

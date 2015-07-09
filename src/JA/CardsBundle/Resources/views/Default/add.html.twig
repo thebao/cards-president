@@ -1,0 +1,84 @@
+{% extends('::base.html.twig') %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/lobby.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/add_game.js') }}"></script>
+{% endblock %}
+
+{% block play_area %}
+    <div class="col-sm-offset-2 well col-sm-8">
+        <h2>Nouvelle Partie:</h2>
+        <hr>
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        <div class="col-sm-6">
+            <div class="form-group">
+                {{ form_label(form.settings.players, "Nombre de joueurs:"|trans, {'label_attr': {'class': 'col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.players, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                {{ form_errors(form.settings.players) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.settings.decks, "Nombre de jeux:", {'label_attr': {'class': 'col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.decks, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                {{ form_errors(form.settings.decks) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.settings.private, "Privé:", {'label_attr': {'class': 'col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.private, {'attr': {'class': 'form-control switchy'}}) }}
+                </div>
+                {{ form_errors(form.settings.private) }}
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+                {{ form_label(form.settings.revolution, "Révolutions autorisées:", {'label_attr': {'class': ' col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.revolution, {'attr': {'class': 'form-control switchy'}}) }}
+                </div>
+                {{ form_errors(form.settings.revolution) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.settings.jokers, "Jokers autorisés:", {'label_attr': {'class': 'col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.jokers, {'attr': {'class': 'form-control switchy'}}) }}
+                </div>
+                {{ form_errors(form.settings.jokers) }}
+            </div>
+            <div class="form-group">
+                {{ form_label(form.settings.chat, "Chat autorisé:", {'label_attr': {'class': 'col-sm-8 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.chat, {'attr': {'class': 'form-control switchy'}}) }}
+                </div>
+                {{ form_errors(form.settings.chat) }}
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-12 hidden" id="gamePassword">
+                {{ form_label(form.settings.password, "Mot de passe:", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+                <div class="col-sm-4">
+                    {{ form_widget(form.settings.password, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                {{ form_errors(form.settings.password) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-offset-1">
+                {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+                {{ form_widget(form.reset, {'attr': {'class': 'btn btn-default btn-warning'}}) }}
+                <a href="{{ path('ja_cards_lobby') }}" class="btn btn-default">Cancel</a>
+            </div>
+        </div>
+
+
+        {# Fermeture de la balise <form> du formulaire HTML #}
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

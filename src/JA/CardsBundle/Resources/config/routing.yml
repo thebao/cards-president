@@ -3,8 +3,26 @@ ja_cards_game:
     defaults: { _controller: JACardsBundle:Default:joinGame }
 
 ja_cards_lobby:
-    path:     /lobby
+    path:     /
     defaults: { _controller: JACardsBundle:Default:lobby }
+
+ja_cards_queue:
+    path:     /wait/{id}
+    defaults: { _controller: JACardsBundle:Default:queue }
+
+ja_cards_newgame:
+    path:     /new
+    defaults: { _controller: JACardsBundle:Default:newGame }
+
+ja_cards_removegame:
+    path:     /remove/{id}
+    defaults: { _controller: JACardsBundle:Default:removeGame }
+    options:
+        expose: true
+
+ja_cards_getgames:
+    path:     /json/get_games
+    defaults: { _controller: JACardsBundle:Default:retrieveGames }
 
 ja_cards_getcards:
     path:     /json/get_cards/{id}

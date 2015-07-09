@@ -4,6 +4,7 @@ namespace JA\CardsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use JA\UserBundle\JAUserBundle;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Game
@@ -30,32 +31,22 @@ class Game
     private $uniqueId;
 
     /**
-     *
      * @var User
      * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
      */
-    private $player1;
+    private $owner;
 
     /**
-     *
      * @var User
-     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
+     * @ORM\ManyToMany(targetEntity="JA\UserBundle\Entity\User", inversedBy="cables")
      */
-    private $player2;
+    private $players;
 
     /**
-     *
-     * @var User
-     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
+     * @var GameSettings
+     * @ORM\OneToOne(targetEntity="JA\CardsBundle\Entity\GameSettings")
      */
-    private $player3;
-
-    /**
-     *
-     * @var User
-     * @ORM\OneToOne(targetEntity="JA\UserBundle\Entity\User")
-     */
-    private $player4;
+    private $settings;
 
     /**
      * @var \DateTime
@@ -71,10 +62,12 @@ class Game
      */
     private $ended;
 
+
     public function __construct()
     {
 
         $this->started = new \Datetime();
+        $this->uniqueId = hash('md5',uniqid('', true));
     }
 
 
@@ -109,98 +102,6 @@ class Game
     public function getUniqueId()
     {
         return $this->uniqueId;
-    }
-
-    /**
-     * Set player1
-     *
-     * @param string $player1
-     * @return Game
-     */
-    public function setPlayer1($player1)
-    {
-        $this->player1 = $player1;
-
-        return $this;
-    }
-
-    /**
-     * Get player1
-     *
-     * @return string 
-     */
-    public function getPlayer1()
-    {
-        return $this->player1;
-    }
-
-    /**
-     * Set player2
-     *
-     * @param string $player2
-     * @return Game
-     */
-    public function setPlayer2($player2)
-    {
-        $this->player2 = $player2;
-
-        return $this;
-    }
-
-    /**
-     * Get player2
-     *
-     * @return string 
-     */
-    public function getPlayer2()
-    {
-        return $this->player2;
-    }
-
-    /**
-     * Set player3
-     *
-     * @param string $player3
-     * @return Game
-     */
-    public function setPlayer3($player3)
-    {
-        $this->player3 = $player3;
-
-        return $this;
-    }
-
-    /**
-     * Get player3
-     *
-     * @return string 
-     */
-    public function getPlayer3()
-    {
-        return $this->player3;
-    }
-
-    /**
-     * Set player4
-     *
-     * @param string $player4
-     * @return Game
-     */
-    public function setPlayer4($player4)
-    {
-        $this->player4 = $player4;
-
-        return $this;
-    }
-
-    /**
-     * Get player4
-     *
-     * @return string 
-     */
-    public function getPlayer4()
-    {
-        return $this->player4;
     }
 
     /**
@@ -249,13 +150,112 @@ class Game
         return $this->ended;
     }
 
+
+    /**
+     * Set owner
+     *
+     * @param \JA\UserBundle\Entity\User $owner
+     * @return Game
+     */
+    public function setOwner(\JA\UserBundle\Entity\User $owner = null)
+    {
+        $this->owner = $owner;
+
+        return $this;
+    }
+
+    /**
+     * Get owner
+     *
+     * @return \JA\UserBundle\Entity\User 
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * Add players
+     *
+     * @param \JA\UserBundle\Entity\User $players
+     * @return Game
+     */
+    public function addPlayer(\JA\UserBundle\Entity\User $players)
+    {
+        $this->players[] = $players;
+
+        return $this;
+    }
+
+    /**
+     * Remove players
+     *
+     * @param \JA\UserBundle\Entity\User $players
+     */
+    public function removePlayer(\JA\UserBundle\Entity\User $players)
+    {
+        $this->players->removeElement($players);
+    }
+
+    /**
+     * Get players
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
     public function getPlayers()
     {
-        return array(
-            $this->player1,
-            $this->player2,
-            $this->player3,
-            $this->player4
-        );
+        return $this->players;
+    }
+
+    public function getJsonPlayers()
+    {
+        $array = array();
+        foreach($this->players as $i=>$player)
+        {
+            $array[$i]['name'] = $player->getUsername();
+            $array[$i]['id'] =  $player->getId();
+
+        }
+        return $array;
+    }
+    /**
+     * Set settings
+     *
+     * @param \JA\CardsBundle\Entity\GameSettings $settings
+     * @return Game
+     */
+    public function setSettings(\JA\CardsBundle\Entity\GameSettings $settings = null)
+    {
+        $this->settings = $settings;
+
+        return $this;
+    }
+
+    /**
+     * Get settings
+     *
+     * @return \JA\CardsBundle\Entity\GameSettings 
+     */
+    public function getSettings()
+    {
+        return $this->settings;
+    }
+
+    public function getJsonArray()
+    {
+        $array = array();
+        $array['id'] = $this->id;
+        $array['uniqueId'] = $this->uniqueId;
+        $array['owner'] = $this->owner->getUsername();
+        $array['started'] = $this->started;
+        $array['revolution'] = $this->settings->getRevolution();
+        $array['chat'] = $this->settings->getChat();
+        $array['decks'] = $this->settings->getDecks();
+        $array['maxPlayers'] = $this->settings->getPlayers();
+        $array['private'] = $this->settings->getPrivate();
+        $array['password'] = $this->settings->getPassword();
+        $array['players'] = $this->getJsonPlayers();
+
+        return $array;
     }
 }

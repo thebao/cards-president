@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <title>Game</title>
+{% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/darkly.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/jquery-ui/jquery-ui.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/trouduc.css') }}" />
@@ -11,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/positions.css') }}" />
     <link rel="stylesheet" href="{{ asset('bundles/bmatznerfontawesome/css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main-ui.css') }}" />
+{% endblock %}
 {% block javascripts %}
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="{{ asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
@@ -20,6 +24,11 @@
     <script type="text/javascript" src="http://localhost:3000/client.js"></script>
     <script type="text/javascript" src="{{ asset('js/smilies.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/chat.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/bootstrap-switch/dist/js/bootstrap-switch.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+    <script type="text/javascript" src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+
 {% endblock %}
 </head>
 <body>
@@ -33,7 +42,7 @@
                 <span class="icon-bar"></span>
             </button>
             <h1>
-                <a class="navbar-brand" href="#">Trouduc</a>
+                <a class="navbar-brand" href="{{ path('ja_cards_lobby') }}">Trouduc</a>
             </h1>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -41,15 +50,20 @@
                 <li role="presentation">
 
                 </li>
-                <li role="presentation" class="active"><a href="#">Home</a></li>
-                <li role="presentation"><a href="#">Add</a></li>
-                <li role="presentation"><a href="#">Profile</a></li>
+                <li role="presentation" class="{% if app.request.attributes.get('_route') == 'ja_cards_lobby' %}active{% endif %}"><a href="{{ path('ja_cards_lobby') }}">Lobby</a></li>
+                <li role="presentation" class="{% if app.request.attributes.get('_route') == 'ja_cards_new' %}active{% endif %}"><a href="{{ path('ja_cards_newgame') }}">New</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 {% block user_bar %}
                 {%if app.user %}
-                    <li><a class="escape-nav-style" href="{{ path('fos_user_profile_edit') }}">{{ app.user.username }}</a>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ app.user.username }} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="escape-nav-style" href="{{ path('fos_user_profile_show') }}">Profile</a></li>
+                            <li><a class="escape-nav-style" href="{{ path('fos_user_security_logout') }}">Disconnect</a></li>
+                        </ul>
+                    </li>
                 {% endif %}
                     {#
                     {% set params = app.request.attributes.get('_route_params')|merge(app.request.query.all()) %}
@@ -71,9 +85,11 @@
 <script type="text/javascript">
     var configuration = {
 
-        {% block configuration %}
+        {% block js_configuration %}
         cardCheckUrl: "{{ path("ja_cards_checkcards") }}",
-        userName: "{{ app.user.username }}",
+        {% if user is defined %}
+            userName: "{{ app.user.username }}",
+        {% endif %}
         smileyDir: " {{ asset('img/smileys/') }}",
         scrollPause: false,
         {% if user is defined %}
@@ -88,10 +104,12 @@
     }
 
 </script>
-<script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/play.js') }}"></script>
-<script type="text/javascript">//newdeck();</script>
-<script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
+{% block bottom_scripts %}
+    <script type="text/javascript" src="{{ asset('js/deal.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/manip.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/play.js') }}"></script>
+    <script type="text/javascript">//newdeck();</script>
+    <script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
+{% endblock %}
 </body>
 </html>

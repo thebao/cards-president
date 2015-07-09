@@ -20,11 +20,46 @@ JA\UserBundle\Entity\User:
     gameHandle: <domainWord()>
     plainPassword: <password()>
     roles: [ROLE_USER]
+JA\CardsBundle\Entity\GameSettings:
+  settings1:
+    players: 2
+    revolution: true
+    private: true
+    jokers: true
+  settings2:
+    players: 4
+    revolution: false
+    jokers: true
+    private: false
+  settings3:
+    players: 4
+    jokers: true
+    revolution: true
+    private: false
+  settings4:
+    players: 2
+    jokers: false
+    revolution: true
+    chat: false
+    private: false
 JA\CardsBundle\Entity\Game:
   game1:
-    uniqueId: abcdef
-    player1: @User0
-    player2: @User1
-    player3: @User2
-    player4: @User3
-    started: <dateTime($max = 'now')>
+    players: [@User7,@User8,@User9]
+    started: <dateTimeBetween('-1 day', 'now')>
+    owner: @User7
+    settings: @settings3
+  game2:
+    players: [@User6]
+    started: <dateTimeBetween('-1 day', 'now')>
+    owner: @User6
+    settings: @settings1
+  game3:
+    players: [@User4,@User5]
+    started: <dateTimeBetween('-1 day', 'now')>
+    owner: @User4
+    settings: @settings2
+  game4:
+    players: [@User1]
+    started: <dateTimeBetween('-1 day', 'now')>
+    owner: @User1
+    settings: @settings4
