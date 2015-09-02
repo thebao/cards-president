@@ -22,9 +22,11 @@ class DefaultController extends Controller
             throw new NotFoundHttpException("La partie d'id ".$id." n'existe pas.");
         }
         $usr= $this->get('security.context')->getToken()->getUser();
+        /*
         if(!in_array($usr->getUsername(), $game->getPlayers())){
             throw new NotFoundHttpException("Pas le droit !");
         }
+        */
         $pwd = $usr->getGameHandle();
         $em = $this->getDoctrine()->getManager();
         return $this->render('JACardsBundle:Default:index.html.twig', array('user'=>$pwd,'game'=>$game));
@@ -46,7 +48,8 @@ class DefaultController extends Controller
         $game = $repo->find($id);
         $usr= $this->get('security.context')->getToken()->getUser();
         $pwd = $usr->getPassword();
-        return $this->render('JACardsBundle:Default:lobby.html.twig', array('games'=>$allGame,'gameId'=>$game->getId()));
+        //return $this->render('JACardsBundle:Default:lobby.html.twig', array('games'=>$allGame,'gameId'=>$game->getId()));
+        return $this->render('JACardsBundle:Default:lobby.html.twig', array('games'=>$allGame));
     }
 
     public function newGameAction(Request $request)
@@ -76,6 +79,13 @@ class DefaultController extends Controller
 
             $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée !');
             $request->attributes->set('gameId', $game->getId());
+            $datas = array(
+                "action"=>"add",
+                "game"=>$game->getJsonArray()
+            );
+
+            $faye = $this->container->get('NomDuBundle.faye.client');
+            $faye->send("/lobby", $datas);
             return $this->redirect($this->generateUrl('ja_cards_queue', array('id'=>$game->getId())));
         }
         return $this->render('JACardsBundle:Default:add.html.twig', array(
@@ -108,6 +118,10 @@ class DefaultController extends Controller
 
         /** @var Game $game */
         $game = $em->getRepository('JACardsBundle:Game')->find($id);
+        $datas = array(
+            "action"=>"remove",
+            "game"=>$game->getId()
+        );
         if (null === $game){
             throw new NotFoundHttpException("La partie d'id ".$id." n'existe pas.");
         }
@@ -115,6 +129,10 @@ class DefaultController extends Controller
             $em->remove($game);
             $em->flush();
         }
+
+        $faye = $this->container->get('NomDuBundle.faye.client');
+        $faye->send("/lobby", $datas);
+
         return $this->redirect($this->generateUrl('ja_cards_lobby'));
 
     }
@@ -128,6 +146,20 @@ class DefaultController extends Controller
         foreach ($games as $game) {
             /** @var Game $game */
             $array[] = $game->getJsonArray();
+        }
+
+        return new JsonResponse($array);
+    }
+
+    public function retrievePlayersAction()
+    {
+        $repository = $this->getDoctrine()->getManager()->getRepository('JAUserBundle:User');
+        $users = $repository->findAll();
+
+        $array = array();
+        foreach ($users as $user) {
+            /** @var User $user */
+            $array[] = $user->getNameAndIds();
         }
 
         return new JsonResponse($array);

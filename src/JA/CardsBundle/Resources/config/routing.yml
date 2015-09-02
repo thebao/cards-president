@@ -24,6 +24,13 @@ ja_cards_getgames:
     path:     /json/get_games
     defaults: { _controller: JACardsBundle:Default:retrieveGames }
 
+ja_cards_getplayers:
+    path:     /json/get_players
+    defaults: { _controller: JACardsBundle:Default:retrievePlayers }
+
+ja_cards_joingame:
+    path:     /play/{id}
+    defaults: { _controller: JACardsBundle:Default:joinGame }
 ja_cards_getcards:
     path:     /json/get_cards/{id}
     defaults: { _controller: JACardsBundle:CardAction:getCards }

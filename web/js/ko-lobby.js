@@ -1,8 +1,19 @@
-// Class to represent a row in the seat reservations grid
+// Cancel first modals trigger
+var modFix = 0;
+
+
+var client = new Faye.Client('http://192.168.0.40:3000/', {timeout: 1});
 $(document).ready(function(){
 
     function genRemoveRoute(item) {
         return Routing.generate('ja_cards_removegame', { id: item });
+    }
+
+    function Player(data){
+        var self = this;
+        self.id = data.id;
+        self.name = data.name;
+
     }
 
     function Game(data) {
@@ -43,9 +54,14 @@ $(document).ready(function(){
             }
         )
         self.games = ko.observableArray([]);
+        self.players = ko.observableArray([]);
         $.getJSON(configuration.getGameUrl, function(allData) {
             var mappedTasks = $.map(allData, function(item) { return new Game(item); });
             self.games(mappedTasks);
+        });
+        $.getJSON(configuration.getPlayersUrl, function(allData) {
+            var mappedTasks = $.map(allData, function(item) { return new Player(item); });
+            self.players(mappedTasks);
         });
 
         self.currentFilter = ko.observable();
@@ -74,9 +90,24 @@ $(document).ready(function(){
         }
 
         self.queue = function(game){
-            game.players.push(self.me());
             self.queuedGame(game);
             self.queueing(true);
+            var publication = client.publish('/lobby', {game: game, player: self.me(), action: 'join'});
+            publication.then(function() {
+            });
+        }
+
+        self.unqueue = function(game){
+            self.queueing(false);
+            console.log(modFix);
+            if(modFix==0){
+
+                modFix+=1;
+                return;
+            }
+            var publication = client.publish('/lobby', {game: game, player: self.me(), action: 'leave'});
+            publication.then(function() {
+            });
         }
 
         self.addGame = function(item){
@@ -100,6 +131,41 @@ $(document).ready(function(){
     LobbyViewModel = new LobbyViewModel();
     ko.applyBindings(LobbyViewModel);
 
+
+    client.subscribe('/lobby', function (message) {
+        if(message.action=='join'){
+            gameId = message.game.id;
+            var game = ko.utils.arrayFirst(LobbyViewModel.games(), function(game) {
+                return game.id === gameId;
+            });
+            game.players.push(message.player);
+            flashLine(game.id,"join");
+        }
+        if(message.action=='leave'){
+            gameId = message.game.id;
+            var game = ko.utils.arrayFirst(LobbyViewModel.games(), function(game) {
+                return game.id === gameId;
+            });
+            console.log(game.players());
+            game.players.remove(function(player) {
+                return player.id == message.player.id;
+            });
+            flashLine(game.id,"leave");
+        }
+        if(message.action=='remove'){
+            console.log(message);
+            gameId = message.game;
+            LobbyViewModel.games.remove(function(game) {
+                return game.id == gameId
+            });
+        }
+        if(message.action=='add'){
+            console.log(message);
+            LobbyViewModel.games.push(new Game(message.game));
+        }
+        if(message.action=='message'){
+        }
+    });
 
 
 });

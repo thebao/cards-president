@@ -29,6 +29,8 @@ class User extends BaseUser
      */
     protected $gameHandle;
 
+
+
     /**
      * Get id
      *
@@ -68,12 +70,4 @@ class User extends BaseUser
         return $this->gameHandle;
     }
 
-    public function getNameAndIds()
-    {
-        $array = array();
-        $array['id'] = $this->id;
-        $array['name'] = $this->username;
-
-        return $array;
-    }
 }

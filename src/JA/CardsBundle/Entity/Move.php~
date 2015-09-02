@@ -1,0 +1,109 @@
+<?php
+
+namespace JA\CardsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Move
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Move
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="player", type="string", length=255)
+     */
+    private $player;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="turn", type="integer")
+     */
+    private $turn;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="face", type="string", length=255)
+     */
+    private $card;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="string", length=255)
+     */
+    private $count;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set player
+     *
+     * @param string $player
+     * @return Move
+     */
+    public function setPlayer($player)
+    {
+        $this->player = $player;
+
+        return $this;
+    }
+
+    /**
+     * Get player
+     *
+     * @return string 
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * Set turn
+     *
+     * @param integer $turn
+     * @return Move
+     */
+    public function setTurn($turn)
+    {
+        $this->turn = $turn;
+
+        return $this;
+    }
+
+    /**
+     * Get turn
+     *
+     * @return integer 
+     */
+    public function getTurn()
+    {
+        return $this->turn;
+    }
+
+}

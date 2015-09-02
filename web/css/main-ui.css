@@ -35,6 +35,9 @@ thead tr{
 #game-list tr.flash{
     background:#41A773;
 }
+#game-list tr.flash-neg{
+    background: #c27313
+}
 #game-list tr.game-row:hover{
     cursor: pointer;
     background:#41A773;

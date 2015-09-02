@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="{{ asset('css/game.css') }}"/>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/smilies.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/chat.js') }}"></script>
+{% endblock %}
+
 {% block play_area %}
 <div id="play-area" class="col-md-9">
     <div id="toolbar">
@@ -35,6 +41,7 @@
 </div>
 <div id="right-bar" class="col-sm-3">
     <div id="opponents">
+        {#
         <b class="white-text">{{ game.player2 }}</b>
         <div id="north" class="deck subdeck">
         </div>
@@ -44,6 +51,7 @@
         <b class="white-text">{{ game.player4 }}</b>
         <div id="west" class="deck subdeck">
         </div>
+        #}
     </div>
     <div id="chat">
 
@@ -107,4 +115,9 @@
 {{ parent() }}
 ,
 userCred: "{{ user }}"
+{% endblock %}
+
+{% block bottom_scripts %}
+{{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/score-chat.js') }}"></script>
 {% endblock %}

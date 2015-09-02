@@ -2,9 +2,18 @@ rowColor = "#5C5C5C";
 activeRowColor = "#41A773";
 n=0;
 hiddenAdder = '<div class="hidden gameChanged" style="position:absolute;bottom:24px;left:50px;font-size:0;color:#303030;">+1</div>';
+hiddenRemover = '<div class="hidden gameChanged" style="position:absolute;bottom:24px;left:50px;font-size:0;color:#303030;">-1</div>';
 
-function flashLine(line){
-    $(line).find('.players').append(hiddenAdder);
+function flashLine(game,action){
+    line = $("tr[data-game='"+game+"']");
+    if(action=="join"){
+        $(line).find('.players').append(hiddenAdder);
+        $class = "flash";
+    }
+    if(action=="leave"){
+        $(line).find('.players').append(hiddenRemover);
+        $class = "flash-neg";
+    }
     gCh = $(line).find('.gameChanged');
     $(gCh).toggleClass('hidden');
     $(gCh).animate({
@@ -19,7 +28,7 @@ function flashLine(line){
     count=0
     var color = $().css('backgroundColor');
     var backgroundInterval = setInterval(function(){
-        $(line).toggleClass("flash");
+        $(line).toggleClass($class);
         count++;
         if(count==2)
             clearInterval(backgroundInterval);
@@ -28,30 +37,15 @@ function flashLine(line){
 
 $(document).ready(function(){
 
-    var client = new Faye.Client('http://192.168.0.40:3000/', {timeout: 1});
-
-    client.subscribe('/lobby', function (message) {
-        if(message.action=='add'){
-            game=message.game;
-            playerUi = $('*[data-game='+game+']').find("span.player-count");
-            playerCount = playerUi.html();
-            playerUi.html(parseInt(playerCount)+1);
-        }
-        if(message.action=='remove'){
-            game=message.game;
-            playerUi = $('*[data-game='+game+']').find("span.player-count");
-            playerCount = playerUi.html();
-            playerUi.html(parseInt(playerCount)-1);
-        }
-        if(message.action=='message'){
-        }
-    });
 
     $("#test").click(function(){
         flashLine(".game-row:nth("+n+")");
         n++;
         if(n==4)
             n=0;
+
+    });
+    $("#cancelQueue").click(function(){
 
     });
 

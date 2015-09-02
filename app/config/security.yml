@@ -19,10 +19,12 @@ security:
                 csrf_provider: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
             logout:       true
             anonymous:    true
-
+        js_router:
+            pattern: ^/(js\/routing)
+            security: false
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/, role: ROLE_USER }
+        - { path: ^/game, role: ROLE_USER }

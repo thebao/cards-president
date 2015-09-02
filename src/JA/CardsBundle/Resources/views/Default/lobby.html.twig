@@ -3,15 +3,16 @@
     {{ parent() }}
     <script type="text/javascript" src="{{ asset('assets/knockout-js/knockout.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/knockout-js/bh/bh-modal.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/smilies.js') }}"></script>
 
 {% endblock %}
 
 {% block play_area %}
-<div id="launchModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"  data-bind="modal:queueing">
+<div id="launchModal" class="modal fade bs-example-modal-sm"  role="dialog" aria-labelledby="mySmallModalLabel"  data-bind="modal:queueing">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <button type="button" class="close hidden" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel">En attente de joueurs...</h4>
             </div>
             <div class="modal-body">
@@ -31,21 +32,21 @@
                 </table>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Annuler</button>
+                <span id="cancelQueue"  class="btn btn-warning" data-bind="click: unqueue($root.queuedGame())">Annuler</span>
+                <button type="button" class="hidden btn btn-warning" data-dismiss="modal">Annuler</button>
             </div>
         </div>
     </div>
 </div>
-<div class="col-sm-8 col-sm-offset-2">
+<div class="col-sm-8 col-sm-offset-1">
     <h2 class="dark">Parties Disponibles:</h2>
     <span id="test" class="dark hidden">flash</span>
-    <div class="container m-top">
-        <div class="col-sm-8">
+    <div class="m-top">
+        <div class="col-sm-10">
             <div class="">
                 <table id="game-list" class="table table-hover">
                     <thead>
                     <tr>
-                        <th>#</th>
                         <th>Name</th>
                         <th class="text-center">Players</th>
                         <th class="text-center">Protected</th>
@@ -55,8 +56,7 @@
                     </tr>
                     </thead>
                     <tbody data-bind="foreach: games">
-                        <tr class="game-row" data-bind="attr: {'data-game': uniqueId }" data-game="">
-                            <td data-bind="text: id"></td>
+                        <tr class="game-row" data-bind="attr: {'data-game': id }" data-game="">
                             <td class="title"><b>partie de <span data-bind="text: owner"></span></b></td>
                             <td class="text-center players" style="position: relative;"{# title="{% for p in game.players %}{{ p.username }}&#10;{% endfor %}"#}><span class="player-count" data-bind="text: players().length"></span>/<span data-bind="text: maxPlayers" class="player-pot"></span></td>
                             <td class="text-center">
@@ -70,7 +70,7 @@
                             </td>
                             <td>
                                 <a data-bind="visible: owner == '{{ app.user }}', attr: { href: remRoute}" href="#" class="btn btn-danger btn-xs">cancel</a>
-                                <span data-bind="visible: owner != '{{ app.user }}', click: $parent.manageGame" href="#" class="btn btn-success btn-xs">join</span>
+                                <span data-bind="visible: owner != '{{ app.user }}', click: $parent.manageGame" class="btn btn-success btn-xs">join</span>
                             </td>
                         </tr>
                     </tbody>
@@ -79,14 +79,70 @@
         </div>
     </div>
 </div>
+<div id="chat">
+
+    <div class="smiley-table hidden">
+        <ul class="list-inline">
+            <li><img src="{{ asset('img/smileys/angry.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/ambivalent.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/confused.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/content.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/cool.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/crazy.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/cry.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/embarrassed.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/footinmouth.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/frown.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/gasp.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/grin.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/heart.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/hearteyes.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/innocent.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/kiss.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/laughing.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/minifrown.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/minismile.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/moneymouth.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/naughty.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/nerd.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/notamused.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/sarcastic.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/sealed.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/sick.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/slant.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/smile.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/thumbsdown.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/thumbsup.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/wink.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/yuck.png') }}" /></li>
+            <li><img src="{{ asset('img/smileys/yum.png') }}" /></li>
+        </ul>
+    </div>
+    <div class="sub-hdr">Chat
+        <div id="new-msg" class="hidden"></div></div>
+    <div class="tog-chat">
+        <i title="Pause Scrolling" id="tog-scroll" class="fa fa-pause"></i>
+        <i title="Toggle Chat" id="tog-chat" class="fa fa-arrow-down"></i>
+    </div>
+    <div id="chat-wrapper">
+        <div class="cont">
+            <ul></ul>
+        </div>
+        <div id="input">
+            <form id="chat-form">
+                <input id="chat-text" type="text" autocomplete="off"/><i id="tog-smile" class="fa fa-smile-o"></i>
+            </form>
+        </div>
+    </div>
+</div>
 {% endblock %}
 {% block js_configuration %}
     {{ parent() }},
-    getGameUrl: "{{ path('ja_cards_getgames') }}"
+    getGameUrl: "{{ path('ja_cards_getgames') }}",
+    getPlayersUrl: "{{ path('ja_cards_getplayers') }}",
     {% if gameId is defined %}
-        ,
         waitId: {{ gameId }},
-    {% endif %},
+    {% endif %}
     user:{
         id: {{ app.user.id }},
         name: "{{ app.user.username }}"
@@ -96,6 +152,7 @@
 {% endblock %}
 {% block bottom_scripts %}
     {{ parent() }}
+    <script type="text/javascript" src="{{ asset('js/lobby-chat.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/ko-lobby.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/lobby.js') }}"></script>
 {% endblock %}

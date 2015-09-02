@@ -1,7 +1,9 @@
 ko.bindingHandlers.modal = {
     init: function (element, valueAccessor) {
         $(element).modal({
-            show: false
+            show: false,
+            backdrop: 'static',
+            keyboard: false
         });
 
         var value = valueAccessor();
@@ -21,7 +23,6 @@ ko.bindingHandlers.modal = {
             $(element).modal('show');
         } else {
             $(element).modal('hide');
-            alert(element);
         }
     }
 }
